@@ -148,6 +148,186 @@ def main():
             command.extend(["-style", args.style])
         if args.fallback_style:
             command.extend(["-fallback-style", args.fallback_style])
+ match = re.search(r"^@@.*\+(\d+)(?:,(\d+))?", line)
+        if match:
+            start_line = int(match.group(1))
+            line_count = 1
+            if match.group(2):
+                line_count = int(match.group(2))
+                # The input is something like
+                #
+                # @@ -1, +0,0 @@
+                #
+                # which means no lines were added.
+                if line_count == 0:
+                    continue
+            # Also format lines range if line_count is 0 in case of deleting
+            # surrounding statements.
+            end_line = start_line
+            if line_count != 0:
+                end_line += line_count - 1
+            lines_by_file.setdefault(filename, []).extend(
+                ["-lines", str(start_line) + ":" + str(end_line)]
+            )
+
+    # Reformat files containing changes in place.
+    for filename, lines in lines_by_file.items():
+        if args.i and args.verbose:
+            print("Formatting {}".format(filename))
+        command = [args.binary, filename]
+        if args.i:
+            command.append("-i")
+        if args.sort_includes:
+            command.append("-sort-includes")
+        command.extend(lines)
+        if args.style:
+            command.extend(["-style", args.style])
+        if args.fallback_style:
+            command.extend(["-fallback-style", args.fallback_style])
+ match = re.search(r"^@@.*\+(\d+)(?:,(\d+))?", line)
+        if match:
+            start_line = int(match.group(1))
+            line_count = 1
+            if match.group(2):
+                line_count = int(match.group(2))
+                # The input is something like
+                #
+                # @@ -1, +0,0 @@
+                #
+                # which means no lines were added.
+                if line_count == 0:
+                    continue
+            # Also format lines range if line_count is 0 in case of deleting
+            # surrounding statements.
+            end_line = start_line
+            if line_count != 0:
+                end_line += line_count - 1
+            lines_by_file.setdefault(filename, []).extend(
+                ["-lines", str(start_line) + ":" + str(end_line)]
+            )
+
+    # Reformat files containing changes in place.
+    for filename, lines in lines_by_file.items():
+        if args.i and args.verbose:
+            print("Formatting {}".format(filename))
+        command = [args.binary, filename]
+        if args.i:
+            command.append("-i")
+        if args.sort_includes:
+            command.append("-sort-includes")
+        command.extend(lines)
+        if args.style:
+            command.extend(["-style", args.style])
+        if args.fallback_style:
+            command.extend(["-fallback-style", args.fallback_style])
+ match = re.search(r"^@@.*\+(\d+)(?:,(\d+))?", line)
+        if match:
+            start_line = int(match.group(1))
+            line_count = 1
+            if match.group(2):
+                line_count = int(match.group(2))
+                # The input is something like
+                #
+                # @@ -1, +0,0 @@
+                #
+                # which means no lines were added.
+                if line_count == 0:
+                    continue
+            # Also format lines range if line_count is 0 in case of deleting
+            # surrounding statements.
+            end_line = start_line
+            if line_count != 0:
+                end_line += line_count - 1
+            lines_by_file.setdefault(filename, []).extend(
+                ["-lines", str(start_line) + ":" + str(end_line)]
+            )
+
+    # Reformat files containing changes in place.
+    for filename, lines in lines_by_file.items():
+        if args.i and args.verbose:
+            print("Formatting {}".format(filename))
+        command = [args.binary, filename]
+        if args.i:
+            command.append("-i")
+        if args.sort_includes:
+            command.append("-sort-includes")
+        command.extend(lines)
+        if args.style:
+            command.extend(["-style", args.style])
+        if args.fallback_style:
+            command.extend(["-fallback-style", args.fallback_style])
+ match = re.search(r"^@@.*\+(\d+)(?:,(\d+))?", line)
+        if match:
+            start_line = int(match.group(1))
+            line_count = 1
+            if match.group(2):
+                line_count = int(match.group(2))
+                # The input is something like
+                #
+                # @@ -1, +0,0 @@
+                #
+                # which means no lines were added.
+                if line_count == 0:
+                    continue
+            # Also format lines range if line_count is 0 in case of deleting
+            # surrounding statements.
+            end_line = start_line
+            if line_count != 0:
+                end_line += line_count - 1
+            lines_by_file.setdefault(filename, []).extend(
+                ["-lines", str(start_line) + ":" + str(end_line)]
+            )
+
+    # Reformat files containing changes in place.
+    for filename, lines in lines_by_file.items():
+        if args.i and args.verbose:
+            print("Formatting {}".format(filename))
+        command = [args.binary, filename]
+        if args.i:
+            command.append("-i")
+        if args.sort_includes:
+            command.append("-sort-includes")
+        command.extend(lines)
+        if args.style:
+            command.extend(["-style", args.style])
+        if args.fallback_style:
+            command.extend(["-fallback-style", args.fallback_style])
+ match = re.search(r"^@@.*\+(\d+)(?:,(\d+))?", line)
+        if match:
+            start_line = int(match.group(1))
+            line_count = 1
+            if match.group(2):
+                line_count = int(match.group(2))
+                # The input is something like
+                #
+                # @@ -1, +0,0 @@
+                #
+                # which means no lines were added.
+                if line_count == 0:
+                    continue
+            # Also format lines range if line_count is 0 in case of deleting
+            # surrounding statements.
+            end_line = start_line
+            if line_count != 0:
+                end_line += line_count - 1
+            lines_by_file.setdefault(filename, []).extend(
+                ["-lines", str(start_line) + ":" + str(end_line)]
+            )
+
+    # Reformat files containing changes in place.
+    for filename, lines in lines_by_file.items():
+        if args.i and args.verbose:
+            print("Formatting {}".format(filename))
+        command = [args.binary, filename]
+        if args.i:
+            command.append("-i")
+        if args.sort_includes:
+            command.append("-sort-includes")
+        command.extend(lines)
+        if args.style:
+            command.extend(["-style", args.style])
+        if args.fallback_style:
+            command.extend(["-fallback-style", args.fallback_style])
 
         try:
             p = subprocess.Popen(
