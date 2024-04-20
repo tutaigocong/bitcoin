@@ -93,6 +93,87 @@ def main():
                     function_name,
         ]
         run_lint_args.extend(matching_files_filtered)
+        def main():
+    exit_code = 0
+    check_doctest()
+    for s in FUNCTION_NAMES_AND_NUMBER_OF_LEADING_ARGUMENTS:
+        function_name, skip_arguments = s.split(',')
+        matching_files = get_matching_files(function_name)
+
+        matching_files_filtered = []
+        for matching_file in matching_files:
+            if not re.search('^src/(leveldb|secp256k1|minisketch|tinyformat|test/fuzz/strprintf.cpp)|contrib/devtools/bitcoin-tidy/example_logprintf.cpp', matching_file):
+                matching_files_filtered.append(matching_file)
+        matching_files_filtered.sort()
+
+        run_lint_args = [
+                    RUN_LINT_FILE,
+                    '--skip-arguments',
+                    skip_arguments,
+                    function_name,
+        ]
+        run_lint_args.extend(matching_files_filtered)
+def main():
+    exit_code = 0
+    check_doctest()
+    for s in FUNCTION_NAMES_AND_NUMBER_OF_LEADING_ARGUMENTS:
+        function_name, skip_arguments = s.split(',')
+        matching_files = get_matching_files(function_name)
+
+        matching_files_filtered = []
+        for matching_file in matching_files:
+            if not re.search('^src/(leveldb|secp256k1|minisketch|tinyformat|test/fuzz/strprintf.cpp)|contrib/devtools/bitcoin-tidy/example_logprintf.cpp', matching_file):
+                matching_files_filtered.append(matching_file)
+        matching_files_filtered.sort()
+
+        run_lint_args = [
+                    RUN_LINT_FILE,
+                    '--skip-arguments',
+                    skip_arguments,
+                    function_name,
+        ]
+        run_lint_args.extend(matching_files_filtered)
+def main():
+    exit_code = 0
+    check_doctest()
+    for s in FUNCTION_NAMES_AND_NUMBER_OF_LEADING_ARGUMENTS:
+        function_name, skip_arguments = s.split(',')
+        matching_files = get_matching_files(function_name)
+
+        matching_files_filtered = []
+        for matching_file in matching_files:
+            if not re.search('^src/(leveldb|secp256k1|minisketch|tinyformat|test/fuzz/strprintf.cpp)|contrib/devtools/bitcoin-tidy/example_logprintf.cpp', matching_file):
+                matching_files_filtered.append(matching_file)
+        matching_files_filtered.sort()
+
+        run_lint_args = [
+                    RUN_LINT_FILE,
+                    '--skip-arguments',
+                    skip_arguments,
+                    function_name,
+        ]
+        run_lint_args.extend(matching_files_filtered)
+def main():
+    exit_code = 0
+    check_doctest()
+    for s in FUNCTION_NAMES_AND_NUMBER_OF_LEADING_ARGUMENTS:
+        function_name, skip_arguments = s.split(',')
+        matching_files = get_matching_files(function_name)
+
+        matching_files_filtered = []
+        for matching_file in matching_files:
+            if not re.search('^src/(leveldb|secp256k1|minisketch|tinyformat|test/fuzz/strprintf.cpp)|contrib/devtools/bitcoin-tidy/example_logprintf.cpp', matching_file):
+                matching_files_filtered.append(matching_file)
+        matching_files_filtered.sort()
+
+        run_lint_args = [
+                    RUN_LINT_FILE,
+                    '--skip-arguments',
+                    skip_arguments,
+                    function_name,
+        ]
+        run_lint_args.extend(matching_files_filtered)
+
 
         try:
             subprocess.run(run_lint_args, check = True)
