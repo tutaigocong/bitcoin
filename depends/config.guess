@@ -88,7 +88,45 @@ while test $# -gt 0 ; do
        break ;;
   esac
 done
-
+# Parse command line
+while test $# -gt 0 ; do
+  case $1 in
+    --time-stamp | --time* | -t )
+       echo "$timestamp" ; exit ;;
+    --version | -v )
+       echo "$version" ; exit ;;
+    --help | --h* | -h )
+       echo "$usage"; exit ;;
+    -- )     # Stop option processing
+       shift; break ;;
+    - )	# Use stdin as input.
+       break ;;
+    -* )
+       echo "$me: invalid option $1$help" >&2
+       exit 1 ;;
+    * )
+       break ;;
+  esac
+done# Parse command line
+while test $# -gt 0 ; do
+  case $1 in
+    --time-stamp | --time* | -t )
+       echo "$timestamp" ; exit ;;
+    --version | -v )
+       echo "$version" ; exit ;;
+    --help | --h* | -h )
+       echo "$usage"; exit ;;
+    -- )     # Stop option processing
+       shift; break ;;
+    - )	# Use stdin as input.
+       break ;;
+    -* )
+       echo "$me: invalid option $1$help" >&2
+       exit 1 ;;
+    * )
+       break ;;
+  esac
+done
 if test $# != 0; then
   echo "$me: too many arguments$help" >&2
   exit 1
